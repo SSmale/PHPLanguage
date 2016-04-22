@@ -7,7 +7,7 @@
 <body>
 <?php
 
-# Script 1.8 - numbers.php
+# Script 1.10 - quotes.php
 # Created 22 April 2016
 # Created by Simon Smale
 # This script shows the use of Quotes .
@@ -26,11 +26,11 @@ $total = $total + ($total * $taxRate);
 $total = number_format ($total, 2);
     
 //print to screen using Double Quotes.
-    echo "Print with \""
+    echo "Print with \"";
 echo "<p>You are purchasing <b> . $qty . </b> widget(s) at a cost of <b>£ . $price . </b> each. \nWith VAT the total comes to <b>£ . $total . </b>.</p>";
     
     //print to screen using single Quotes.
-    echo "Print with \'"
+    echo "Print with \'";
 echo '<p>You are purchasing <b> . $qty . </b> widget(s) at a cost of <b>£ . $price . </b> each. \nWith VAT the total comes to <b>£ . $total . </b>.</p>';
 
 ?>    
