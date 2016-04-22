@@ -27,7 +27,7 @@ $total = number_format ($total, 2);
     
 //print to screen using Double Quotes.
     echo "Print with \"";
-echo "<p>You are purchasing <b> . $qty . </b> widget(s) at a cost of <b>£ . $price . </b> each. \nWith VAT the total comes to <b>£ . $total . </b>.</p>";
+echo "<p>You are purchasing <b> . $qty . </b> widget(s) at a cost of <b>£ . $price . </b> each. \n With VAT the total comes to <b>£ . $total . </b>.</p>";
     
     //print to screen using single Quotes.
     echo "Print with \'";

@@ -25,7 +25,7 @@
     */
     
     //print the submited info back to the user.
-    echo "<p>Thanks <b>$name</>, for the following comments:<b>$comments</b>. We will reply to you at<b>$email</b>.</p>"
+    echo "<p>Thanks <b>$name</b>, for the following comments: <b>$comments</b>. We will reply to you at <b>$email</b>.</p>"
 
 ?>
 </body>
