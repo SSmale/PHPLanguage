@@ -13,19 +13,21 @@
 # This script shows the use of numbers and arithmatic.
 
 //set the variables
-    $qty = 30; // number they buy
-    $price = 119.95;
-    $taxRate = .2; //20% tax (UK VAT)
+$qty = 30; // number they buy
+$price = 119.95;
+$taxRate = .2; //20% tax (UK VAT)
     
-    //calc the total
-    $total = $qty*$price;
-    $total = $total + ($total * $taxRate);
-    // calulate then add tax
+//calc the total
+$total = $qty*$price;
+$total = $total + ($total * $taxRate);
+// calulate then add tax
     
-    //Format
-    $total = number_format ($total, 2);
+//Format
+$total = number_format ($total, 2);
     
-    //print to screen
-    echo '<p>You are purchasing <b>' .$qty . '</b> widget(s) at a cost of <b>£'. $price . '</b> each. \nWith VAT the total comes to <b>£'. $total . '</b>.</p>';
+//print to screen
+echo '<p>You are purchasing <b>' . $qty . '</b> widget(s) at a cost of <b>£' . $price . '</b> each. \nWith VAT the total comes to <b>£' . $total . '</b>.</p>';
+
+?>    
 </body>
 </html>
