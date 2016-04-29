@@ -8,25 +8,36 @@
 <?php
 
 # Script 2.3 - handle_formV2.php 
-# Created 22 April 2016
+# Created 29 April 2016
 # Created by Simon Smale
-# This script handles the HTML form and prints the input back to the user.
-
+# This script handles the HTML form and prints the input back to the user. w/Gender
     
-    //create shorthand variable names.
-    $name=$_REQUEST['name'];
-    $email=$_REQUEST['email'];
-    $comments=$_REQUEST['comments'];
+// Create a shorthand for the form data:
+$name = $_REQUEST['name'];
+$email = $_REQUEST['email'];
+$comments = $_REQUEST['comments'];
 
-    /*not used
-    $_REQUEST['age']
-    $_REQUEST['gender']
-    $_REQUEST['submit']
-    */
+// Create the $gender variable:
+if (isset($_REQUEST['gender'])) {
+	$gender = $_REQUEST['gender'];
+} else {
+	$gender = NULL;
+}
+
+// Print the submitted information:
+echo "<p>Thank you, <b>$name</b>, for the following comments:<br />
+<tt>$comments</tt></p>
+<p>We will reply to you at <i>$email</i>.</p>\n";
+
+// Print a message based upon the gender value:
+if ($gender == 'M') {
+	echo '<p><b>Good day, Sir!</b></p>';
+} elseif ($gender == 'F') {
+	echo '<p><b>Good day, Madam!</b></p>';
+} else { // No gender selected.
+	echo '<p><b>You forgot to enter your gender!</b></p>';
+}
     
-    //print the submited info back to the user.
-    echo "<p>Thanks <b>$name</b>, for the following comments: <b>$comments</b>. We will reply to you at <b>$email</b>.</p>"
-
 ?>
 </body>
 </html>
