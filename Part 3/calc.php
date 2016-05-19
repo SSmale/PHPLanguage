@@ -3,7 +3,7 @@ $pageTitle = "PHP Fuel Clac";
 include ('Templates/header.html');
 
 //Check if the form was submitted
-if ($_SERVER['REQUEST_METHOD]=='POST'){
+if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     
     //Validate form
     if (isset($_POST['distance'], $_POST['fuelPrice'], $_POST['efficiency']) && is_numeric($_POST['fuelPrice']) && is_numeric($_POST['distance']) && is_numeric($_POST['efficiency'])){
