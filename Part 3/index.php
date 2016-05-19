@@ -9,5 +9,5 @@ include ('Templates/header.html');
 <p>FILL ME UP PLEASE!!!!</p>
 
 <?php
-incluse ('Templates/fotter.html');
+include ('Templates/footer.html');
 ?>
