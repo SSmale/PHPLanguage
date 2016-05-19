@@ -49,7 +49,7 @@
             }//END of Inner loop
             
             //Close the list tag
-            </ul>
+            echo '</ul>';
         }//END of Outer loop
     ?>
     
