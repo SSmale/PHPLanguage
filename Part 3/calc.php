@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD]=='POST'){
         //Calculate the result
         $mpg = $_POST['distance'] / $_POST['efficiency'];
         $cost = $mpg * $_POST['fuelPrice'];
-        $hours - $_POST['distance']/65;
+        $hours = $_POST['distance']/65;
         
         //Print Result
         echo '<h1>Total Estimated Cost</h1>
