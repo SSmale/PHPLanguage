@@ -8,7 +8,7 @@
     <form action="calendar.php" method="post">
 <?php
 
-# Script 2.6 - calendar.php
+# Script 2.9 - calendarV2.php
 # Created 19 May 2016
 # Created by Simon Smale
 # This script generates a calender selector using php.
