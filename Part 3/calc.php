@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         
         //Print Result
         echo '<h1>Total Estimated Cost</h1>
-        <p>The cost of driving ' . $_POST['distance'] . 'miles, averaging ' . $_POST['efficiency'] . ' MPG, paying an average of £ ' . $_POST['fuelCost'] . ' per litre, is £' . number_format ($cost,2) . '. If you drive at an average of 65 mph, the trip will take approx. ' . number_format ($hours,2) . ' hours </p>';
+        <p>The cost of driving ' . $_POST['distance'] . 'miles, averaging ' . $_POST['efficiency'] . ' MPG, paying an average of ' . $_POST['fuelPrice'] . 'pence per litre, is £' . number_format ($cost,2) . '. If you drive at an average of 65 mph, the trip will take approx. ' . number_format ($hours,2) . ' hours </p>';
     
     }else{
     
@@ -31,11 +31,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 <h1>Fuel Cost</h1>
 
 <form action="calc.php" method="post">
-    <p>Distance in miles: <input type"text" name="distance" /></p>
+    <p>Distance in miles: <input type="text" name="distance" /></p>
     <p>Ave. Price per Litre: <span class="input">
-        <input type="radio" name="fuelPrice" value="0.999"/> 99.9
-        <input type="radio" name="fuelPrice" value="1.059"/> 105.9
-        <input type="radio" name="fuelPrice" value="1.109"/> 110.9
+        <input type="radio" name="fuelPrice" value="0.999"/> 99.9p
+        <input type="radio" name="fuelPrice" value="1.059"/> 105.9p
+        <input type="radio" name="fuelPrice" value="1.109"/> 110.9p
     </span></p>
     <p>Fuel Efficency: <select name="efficiency">
         <option value="10">Terrible</option>
