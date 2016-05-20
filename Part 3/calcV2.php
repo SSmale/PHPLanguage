@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 <h1>Fuel Cost</h1>
 
-<form action="calc.php" method="post">
+<form action="calcV2.php" method="post">
     <p>Distance in miles: <input type="text" name="distance" value="<?php if (isset($_POST['distance'])){ echo $_POST['distance']; } ?>"/></p>
     <p>Ave. Price per Litre: <span class="input">
         <input type="radio" name="fuelPrice" value="0.999" <?php if (isset($_POST['fuelPrice']) && ($_POST['fuelPrice'] == '0.999')){ echo 'checked="checked"'; } ?>/> 99.9p
