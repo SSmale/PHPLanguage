@@ -1,6 +1,6 @@
 <?php 
 
-function createPriceRadio ($value){
+function createPriceRadio($value){
     
     //Start printing the element
    echo '<input type="radio" name="fuelPrice" value=" ' . $value . '"';
@@ -11,7 +11,7 @@ function createPriceRadio ($value){
     }
     
     //primnt the end of the html and the value
-    echo '/> £ $value';
+    echo '/> £' . $value . '';
         
 }
 
