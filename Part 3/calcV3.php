@@ -11,7 +11,7 @@ function createPriceRadio($value){
     }
     
     //primnt the end of the html and the value
-    echo '/> £' . $value . '';
+    echo "/> £  $value ";
         
 }
 
