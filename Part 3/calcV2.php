@@ -33,17 +33,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 <form action="calc.php" method="post">
     <p>Distance in miles: <input type="text" name="distance" value="<?php if (isset($_POST['distance'])){ echo $_POST['distance']; } ?>"/></p>
     <p>Ave. Price per Litre: <span class="input">
-        <input type="radio" name="fuelPrice" value="0.999" <?php if (isset($_POST['fuelPrice']) && ($_POST['fuelPrice'] == 0.999)){ echo 'checked="checked"'; } ?>/> 99.9p
-        <input type="radio" name="fuelPrice" value="1.059" <?php if (isset($_POST['fuelPrice']) && ($_POST['fuelPrice'] == 1.059)){ echo 'checked="checked"'; } ?>/> 105.9p
-        <input type="radio" name="fuelPrice" value="1.109" <?php if (isset($_POST['fuelPrice']) && ($_POST['fuelPrice'] == 1.109)){ echo 'checked="checked"'; } ?>/> 110.9p
+        <input type="radio" name="fuelPrice" value="0.999" <?php if (isset($_POST['fuelPrice']) && ($_POST['fuelPrice'] == '0.999')){ echo 'checked="checked"'; } ?>/> 99.9p
+        <input type="radio" name="fuelPrice" value="1.059" <?php if (isset($_POST['fuelPrice']) && ($_POST['fuelPrice'] == '1.059')){ echo 'checked="checked"'; } ?>/> 105.9p
+        <input type="radio" name="fuelPrice" value="1.109" <?php if (isset($_POST['fuelPrice']) && ($_POST['fuelPrice'] == '1.109')){ echo 'checked="checked"'; } ?>/> 110.9p
     </span></p>
     <p>Fuel Efficency: <select name="efficiency">
-        <option value="10" <?php if (isset($_POST['efficiency']) && ($_POST['efficiency'] == 10)){ echo 'selected="selected"'; } ?>>Terrible</option>
-        <option value="20" <?php if (isset($_POST['efficiency']) && ($_POST['efficiency'] == 20)){ echo 'selected="selected"'; } ?>>Low</option>
-        <option value="30" <?php if (isset($_POST['efficiency']) && ($_POST['efficiency'] == 30)){ echo 'selected="selected"'; } ?>>Average</option>
-        <option value="40" <?php if (isset($_POST['efficiency']) && ($_POST['efficiency'] == 40)){ echo 'selected="selected"'; } ?>>Decent</option>
-        <option value="50" <?php if (isset($_POST['efficiency']) && ($_POST['efficiency'] == 50)){ echo 'selected="selected"'; } ?>>Very Good</option>
-        <option value="60" <?php if (isset($_POST['efficiency']) && ($_POST['efficiency'] == 60)){ echo 'selected="selected"'; } ?>>Outstanding</option>
+        <option value="10" <?php if (isset($_POST['efficiency']) && ($_POST['efficiency'] == '10')){ echo 'selected="selected"'; } ?>>Terrible</option>
+        <option value="20" <?php if (isset($_POST['efficiency']) && ($_POST['efficiency'] == '20')){ echo 'selected="selected"'; } ?>>Low</option>
+        <option value="30" <?php if (isset($_POST['efficiency']) && ($_POST['efficiency'] == '30')){ echo 'selected="selected"'; } ?>>Average</option>
+        <option value="40" <?php if (isset($_POST['efficiency']) && ($_POST['efficiency'] == '40')){ echo 'selected="selected"'; } ?>>Decent</option>
+        <option value="50" <?php if (isset($_POST['efficiency']) && ($_POST['efficiency'] == '50')){ echo 'selected="selected"'; } ?>>Very Good</option>
+        <option value="60" <?php if (isset($_POST['efficiency']) && ($_POST['efficiency'] == '60')){ echo 'selected="selected"'; } ?>>Outstanding</option>
     </select></p>
     <p><input type="submit" name="submit" value="CALCULATE!" /></p>
 </form>    
