@@ -50,9 +50,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     <p>Distance in miles: <input type="text" name="distance" value="<?php if (isset($_POST['distance'])){ echo $_POST['distance']; } ?>"/></p>
     <p>Ave. Price per Litre: <span class="input">
         <?php
-        createPriceRadio(0.999);
-        createPriceRadio(1.059);
-        createPriceRadio(1.109);
+        createPriceRadio('0.999');
+        createPriceRadio('1.059');
+        createPriceRadio('1.109');
         ?>
     </span></p>
     <p>Fuel Efficency: <select name="efficiency">
