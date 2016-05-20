@@ -6,12 +6,12 @@ function createPriceRadio($value){
    echo '<input type="radio" name="fuelPrice" value=" ' . $value . '"';
     
     //check for sticky
-    if (isset($_POST['fuelPrice']) && ($_POST['fuelPrice'] == $value){
+    if (isset($_POST['fuelPrice']) && ($_POST['fuelPrice'] == $value)){
         echo 'checked="checked"'; 
     }
     
     //primnt the end of the html and the value
-    echo "/> £  $value ";
+    echo "/> $value ";
         
 }
 
