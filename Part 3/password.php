@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     if (empty($_POST['pass3'])){
         $errors[] = 'You forgot to enter your old password';
     }else{
-        $email = mysqli_real_escape_string($dbc, trim($_POST['pass3']));
+        $pass3 = mysqli_real_escape_string($dbc, trim($_POST['pass3']));
     }
     
     //Check that the password is present and match.
@@ -48,13 +48,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         
         //count the no of records updated
         $num = mysqli_num_rows($result);
+
         if ($num == 1){
             
             //get the user id
             $row = mysqli_fetch_array($result, MYSQLI_NUM);
             
             //make the update query
-            $query = "UPDATE users SET pass=SHA1('$pass1') WHERE user_id=$row[0]";
+            $query = "UPDATE users SET pass=SHA1('$pass') WHERE user_id=$row[0]";
             
             //run the update querry
             $result = @mysqli_query($dbc,$query);
