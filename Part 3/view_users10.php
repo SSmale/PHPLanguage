@@ -7,7 +7,7 @@ include ('Templates/header.html');
 require ('../../../PHP_Book_MySQL_Connection.php');
         
 //Make the query
-$query = "SELECT CONCAT(last_name, ', ', first_name) AS name, DATE_FORMAT(registration_date, '%M %d %Y') AS dr 
+$query = "SELECT last_name, first_name, DATE_FORMAT(registration_date, '%M %d %Y') AS dr, user_id 
 FROM users 
 ORDER BY registration_date ASC";
 
@@ -20,10 +20,10 @@ if ($num >0){
     
     echo "<p>There are currently $num registered users.</p>";
     
-    echo '<table><tr><td>Name</td><td>Registration Date</td></tr>';
+    echo '<table><tr><td>Edit</td><td>Delete</td><td>First Name</td><td>Last Name</td><td>Registration Date</td></tr>';
     
     while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
-        echo '<table><tr><td>' . $row['name'] . '</td><td>' . $row['dr'] . '</td></tr>';
+        echo '<table><tr><td><a href="edit_user.php?id=' . $row['user_id'] . '">EDIT</a></td><td><a href="delete_user.php?id=' . $row['user_id'] . '">DELETE</a></td><td>' . $row['last_name'] . '</td><td>' . $row['first_name'] . '</td><td>' . $row['dr'] . '</td></tr>';
     }
     echo '</table>';
     
