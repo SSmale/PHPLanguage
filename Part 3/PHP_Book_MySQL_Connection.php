@@ -6,7 +6,7 @@
 //Define the access information.
 DEFINE ('DB_USER','PHPBook');
 DEFINE ('DB_PASSWORD','LarryUllman');
-DEFINE ('DB_Host','localhost');
+DEFINE ('DB_HOST','localhost');
 DEFINE ('DB_NAME','PHP_Book_DB');
 
 //Make the connection or log errors.
