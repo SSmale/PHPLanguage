@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
             $row = mysqli_fetch_array($result, MYSQLI_NUM);
             
             //make the update query
-            $query = "UPDATE users SET pass=SHA1('pass1') WHERE user_id=$row[0]";
+            $query = "UPDATE users SET pass=SHA1('$pass1') WHERE user_id=$row[0]";
             
             //run the update querry
             $result = @mysqli_query($dbc,$query);
@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                 
             }else{//error with query
                 //Public message
-                echo '<h1>System Error</h1><p>You could not be registered at this time. Appologies.</p>';
+                echo '<h1>System Error</h1><p>Password cant be changed. Appologies.</p>';
             
                 //Debug
                 echo '<p>' . mysqli_error($dbc). '<br /><br /> Query: ' . $query . '</p>';
