@@ -6,9 +6,9 @@ include ('Templates/header.html');
 echo '<h1>Delete a User</h1>';
 
 if ((isset($_GET['id'])) && (is_numeric($_GET['id']))){
-    $id = £_GET['id'];
+    $id = $_GET['id'];
 }elseif((isset($_POST['id'])) && (is_numeric($_POST['id']))){
-    $id = £_POST['id'];
+    $id = $_POST['id'];
 }else{
     echo '<p>This page has been accessed in error <a href="activity2.php">Click Here</a> to return.</p>';
     include ('Templates/footer.html');
