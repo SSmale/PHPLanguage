@@ -92,9 +92,9 @@ if (mysqli_num_rows($result) == 1){
         
     // Create the form:
 	echo '<form action="edit_user.php" method="post">
-    <p>First Name: <input type="text" name="first_name" size="15" maxlength="20" value=" . $row[1] . " /></p>
-	<p>Last Name: <input type="text" name="last_name" size="15" maxlength="40" value=" . $row[0] . " /></p>
-	<p>Email Address: <input type="text" name="email" size="20" maxlength="60" value=" . $row[2] . " /> </p>
+    <p>First Name: <input type="text" name="first_name" size="15" maxlength="20" value="' . $row[1] . '" /></p>
+	<p>Last Name: <input type="text" name="last_name" size="15" maxlength="40" value="' . $row[0] . '" /></p>
+	<p>Email Address: <input type="text" name="email" size="20" maxlength="60" value="' . $row[2] . '" /> </p>
 	<input type="submit" name="submit" value="Submit" />
 	<input type="hidden" name="id" value="' . $id . '" />
 	</form>';
