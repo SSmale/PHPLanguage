@@ -7,10 +7,10 @@ echo '<h1>View Users</h1>';
 
 require_once ('../../../PHP_Book_MySQL_Connection.php');
 
-$display = 10;
+$display = 5;
 
-if((isset($_POST['p'])) && (is_numeric($_POST['p']))){
-    $pages = $_POST['p'];
+if((isset($_GET['p'])) && (is_numeric($_GET['p']))){
+    $pages = $_GET['p'];
 }else{
     
     $query = "SELECT COUNT(user_id) FROM users";
@@ -26,10 +26,10 @@ if((isset($_POST['p'])) && (is_numeric($_POST['p']))){
     
 }
 
-if((isset($_POST['s'])) && (is_numeric($_POST['s']))){
-    $start = $_POST['s'];
+if((isset($_GET['s'])) && (is_numeric($_GET['s']))){
+    $start = $_GET['s'];
 }else{
-    $start = 0:
+    $start = 0;
 }
 
 $query = "SELECT last_name, first_name, DATE_FORMAT(registration_date, '%M %d %Y') as dr, user_id FROM users ORDER BY registration_date ASC LIMIT $start, $display";
@@ -37,11 +37,11 @@ $result = @mysqli_query ($dbc, $query);
 
 echo '<table style="margin: auto;"><tr><th>Edit</th><th>Delete</th><th>First Name</th><th>Last Name</th><th>Registration Date</th></tr>';
 
-$bg = '#eeeeee';
+$bg = '#000000';
 
 while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
     
-    $bg = ($bg=='#eeeeee' ? '#ffffff' : '#eeeeee');
+    $bg = ($bg=='#000000' ? '#0000A0' : '#000000');
     
     echo '<tr bgcolor="' . $bg . '"><td><a href="edit_user.php?id=' . $row['user_id'] . '">EDIT</a></td><td><a href="delete_user.php?id=' . $row['user_id'] . '">DELETE</a></td><td>' . $row['last_name'] . '</td><td>' . $row['first_name'] . '</td><td>' . $row['dr'] . '</td></tr>';
 
@@ -63,7 +63,7 @@ if ($pages > 1){
     
     for ($i = 1; $i <= $pages; $i++){
         if ($i != $current_page){
-            echo '<a href="view_users_bypage.php?s=' . ($display * ($i - 1)) . '&p=' . $pages . '">' . $i . '</a> ';
+            echo '<a href="view_users_bypage.php?s=' . (($display * ($i - 1))) . '&p=' . $pages . '">' . $i . '</a> ';
         }else{
             echo $i . ' ';
         }
