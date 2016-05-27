@@ -1,44 +1,40 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <title>Email Me</title>
-    </head>
-    <body>
+<?php 
+#index.php
+$pageTitle = "Contact Me";
+include ('Templates/header.html');
 
-        <h1>Contact Me</h1>
+        
+    echo '<h1>Contact Me</h1>';
 
-        <?php
+    if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
-        if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+        if (!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['comments'])){
+             
+            $body = "Name : {$_POST['name']}\n\nFrom: {$_POST['email']}\n\nComments: {$_POST['comments']}";
+             
+            $body = wordwrap($body, 70);
 
-            if (!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['comments'])){
+            $to = 'simon@smalemail.net';
 
-                $body = "Name : {$_POST['name']}\n\nFrom: {$_POST['email']}\n\nComments: {$_POST['comments']}";
+            $subject = 'Contact Form Submission';
 
-                $body = wordwrap($body, 70);
+            $headers = "From: commentstest\r\n";
+                
+            //$headers .= "Cc: simonsmale@protonmail.com\r\n";
 
-                $to = 'simon@smalemail.net';
+            mail($to, $subject, $body, $headers);
 
-                $subject = 'Contact Form Submission';
+            echo '<p>Thanks, ill get back to you soon!</p>';
 
-                $headers = "From: commentstest\r\n";
-                    
-                //$headers .= "Cc: simonsmale@protonmail.com\r\n";
+            $_POST = array();
 
-                mail($to, $subject, $body, $headers);
+        }else{
+            echo '<p>Please fill out the form completly</p>';
+        }
 
-                echo '<p>Thanks, ill get back to you soon!</p>';
+    }       
 
-                $_POST = array();
-
-            }else{
-                echo '<p>Please fill out the form completly</p>';
-            }
-
-       }       
-
-        ?>
+?>
 
         <p>Please contact me via the form below</p>
 
@@ -48,5 +44,7 @@
             <p>Comments: <textarea name="comments" row="5" cols="30"><?php if (isset($_POST['comments'])) echo $_POST['comments']; ?></textarea></p>
             <p><input type="submit" name="submit" value="Send!"/></p>
         </form>
-    </body>
-</html>
+
+<?php
+include ('Templates/footer.html');
+?>
