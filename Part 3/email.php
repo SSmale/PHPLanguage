@@ -14,7 +14,7 @@
 
             if (!empty($_POST['name'])) && (!empty($_POST['email'])) && (!empty($_POST['comments'])){
 
-                $body = "Name : {$_POST['name']}\n\nComments: {$_POST['comments']}"
+                $body = "Name : {$_POST['name']}\n\nComments: {$_POST['comments']}";
 
                 $body = wordwrap($body, 70);
 
@@ -22,7 +22,7 @@
 
                 $subject = "Contact Form Submission";
 
-                $from = "From: {$_POST['email']}"
+                $from = "From: {$_POST['email']}";
 
                 mail($to, $subject, $body, $from);
 
