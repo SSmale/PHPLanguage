@@ -20,7 +20,7 @@ if ($num >0){
     
     echo "<p>There are currently $num registered users.</p>";
     
-    echo '<table><tr><td>Edit</td><td>Delete</td><td>First Name</td><td>Last Name</td><td>Registration Date</td></tr>';
+    echo '<table style="margin: auto;"><tr><th>Edit</th><th>Delete</th><th>First Name</th><th>Last Name</th><td>Registration Date</th></tr>';
     
     while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
         echo '<table><tr><td><a href="edit_user.php?id=' . $row['user_id'] . '">EDIT</a></td><td><a href="delete_user.php?id=' . $row['user_id'] . '">DELETE</a></td><td>' . $row['last_name'] . '</td><td>' . $row['first_name'] . '</td><td>' . $row['dr'] . '</td></tr>';
