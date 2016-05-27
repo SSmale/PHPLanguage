@@ -88,7 +88,6 @@ $result = @mysqli_query($dbc, $query);
 if (mysqli_num_rows($result) == 1){
                 
     $row = mysqli_fetch_array ($result, MYSQLI_NUM);
-    echo"<h3>Name: $row[0]</h3> Are you sure you want to delete this user?";
         
     // Create the form:
 	echo '<form action="edit_user.php" method="post">
