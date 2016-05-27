@@ -35,7 +35,7 @@ if((isset($_GET['s'])) && (is_numeric($_GET['s']))){
 $query = "SELECT last_name, first_name, DATE_FORMAT(registration_date, '%M %d %Y') as dr, user_id FROM users ORDER BY registration_date ASC LIMIT $start, $display";
 $result = @mysqli_query ($dbc, $query);
 
-echo '<table style="margin: auto;"><tr><th>Edit</th><th>Delete</th><th>First Name</th><th>Last Name</th><th>Registration Date</th></tr>';
+echo '<table style="margin: auto;"><tr><th>Edit</th><th>Delete</th><th>Last Name</th><th>First Name</th><th>Registration Date</th></tr>';
 
 $bg = '#000000';
 

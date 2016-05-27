@@ -61,7 +61,7 @@ while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
     
     $bg = ($bg=='#000000' ? '#0000A0' : '#000000');
     
-    echo '<tr bgcolor="' . $bg . '"><td><a href="edit_user.php?id=' . $row['user_id'] . '">EDIT</a></td><td><a href="delete_user.php?id=' . $row['user_id'] . '">DELETE</a></td><td>' . $row['last_name'] . '</td><td>' . $row['first_name'] . '</td><td>' . $row['dr'] . '</td></tr>';
+    echo '<tr bgcolor="' . $bg . '"><td><a href="edit_user.php?id=' . $row['user_id'] . '">EDIT</a></td><td><a href="delete_user.php?id=' . $row['user_id'] . '">DELETE</a></td><td>' . $row['first_name'] . '</td><td>' . $row['last_name'] . '</td><td>' . $row['dr'] . '</td></tr>';
 
 }
 echo '</table>';
